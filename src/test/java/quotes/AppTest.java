@@ -3,12 +3,35 @@
  */
 package quotes;
 
+import com.google.gson.Gson;
 import org.junit.Test;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+
+    @Test public void testConstructor() {
+        RandomQuote quoter = new RandomQuote("author", "text");
+        System.out.println(quoter);
+    }
+
+    @Test public void testQuoteIsReturning() {
+        String randomQuote = "";
+        Gson gson = new Gson();
+        RandomQuote[] quotesArray;
+        try {
+            File recentQuotes = new File("json/recentquotes.json");
+            FileReader reader = new FileReader(recentQuotes);
+            quotesArray = gson.fromJson(reader, RandomQuote[].class);
+            int random = (int)(Math.random() * quotesArray.length);
+            randomQuote = RandomQuote[random].toString();
+            System.out.println(randomQuote);
+        } catch (FileNotFoundException e) {
+            randomQuote = "File not found " + e;
+        }
     }
 }
