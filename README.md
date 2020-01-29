@@ -1,8 +1,17 @@
 # 401-quotes
 401 Java lab that implements OO design and GSON.
 
-Attempts to read in a file of random quotes, parse the quotes using GSON, and return a random quote to the user. 
+## Description
+This project tests our GSON knowledge by reading in a file of random quotes, parsing the file using GSON, and returning a random quote and its associated author to the user. 
 
-Libaries used : GSON, File, FileReader, FileNotFoundException
+## Libraries and Tools
+- GSON
+- File, FileReader
+- FileNotFoundException
+- Gradle (Build Tool)
 
-Frameworks: Gradle
+## Installation and Run
+- Clone this repo from GitHub to your local machine. 
+- This is a Gradle project. Using IntelliJ IDEA, 'Import' this repo at the level where build.gradle is visible. 
+- Direct to src/main/java/quotes within IntelliJ's Project navigation.
+- Within the quotes package, open the App class and click the green Play button. You should see a random quote print to the console. 

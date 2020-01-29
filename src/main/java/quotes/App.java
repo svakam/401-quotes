@@ -24,7 +24,7 @@ public class App {
             FileReader reader = new FileReader(recentQuotes);
             quotesArray = gson.fromJson(reader, RandomQuote[].class);
             int random = (int)(Math.random() * quotesArray.length);
-            randomQuote = RandomQuote[random].toString();
+            randomQuote = quotesArray[random].toString();
         } catch (FileNotFoundException e) {
             randomQuote = "File not found " + e;
         }

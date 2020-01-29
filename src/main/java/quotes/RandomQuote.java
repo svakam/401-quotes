@@ -19,7 +19,6 @@ public class RandomQuote {
 
     public static RandomQuote fromJson(Reader reader) {
         Gson gson = new Gson();
-        RandomQuote result = gson.fromJson(reader, RandomQuote.class);
-        return result;
+        return gson.fromJson(reader, RandomQuote.class);
     }
 }
